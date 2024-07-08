@@ -18,12 +18,18 @@
     display: none;
 }
 
+.ajustar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .grid{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    max-width: 100%;
-    gap: 1rem;
-   margin: 0 auto;
+    
+    gap: 1.5rem;
+    
 }
 
 .banner{
@@ -68,6 +74,96 @@ list-style: none;
     height: 150px;
 }
 
+.card:hover{
+    cursor: pointer;
+    animation: clickCard linear .45s normal forwards;
+}
+
+.windown{
+    background-color: rgba(0, 0, 0, 0.212);
+    position: fixed;
+    z-index: 33;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+}
+
+#windown{
+    background-color: rgba(0, 0, 0, 0.212);
+    position: fixed;
+    z-index: 33;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2;
+}
+
+#windown.active{
+    background-color: rgba(0, 0, 0, 0.212);
+    position: fixed;
+    z-index: 33;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.voltar{
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.voltar svg{
+    background-color: white;
+    border-radius: 50%;
+  
+}
+
+
+
+
+@keyframes clickCard{
+    0%{
+        scale: .95;
+    }
+
+    40%{
+        scale: .90;  
+    }
+
+    60%{
+        scale: .95;  
+    }
+
+    100%{
+        scale: 1.02;
+    }
+}
+
+
+
+
 
 
 
@@ -94,8 +190,17 @@ list-style: none;
 
         .grid{       
             grid-template-columns: repeat(2, 1fr);       
-    
+   
+            width: 600px;
         }
+
+        .ajustar{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+         
+                }
+                
 
         .navbar-toggler{
             margin-right: 1rem;
@@ -104,41 +209,67 @@ list-style: none;
         .banner{
             height: 600px;
         }
+
+       
         
         
-#contato .flex img{
-    height: 100px;
-}
-    
-.flex{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-
-}
-
-.logo{
-    height: 40px;
-    display: none;
-}
+        #contato .flex img{
+            height: 100px;
+        }
+            
+        .flex{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
 
         }
 
-        
-    @media (max-width: 500px){
+        .logo{
+            height: 40px;
+            display: none;
+        }
+
+                }
+
+                
+@media (max-width: 610px){
 
         .banner{
             height: 300px;
         }
 
-        .grid{
+             
+        .grid{       
+            grid-template-columns: repeat(1, 1fr);       
             
-            grid-template-columns: repeat(1, 1fr);
-        
-    
+            width: 290px;
         }
+
+        .ajustar{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+                }
+
+        
+
+
+    }
+
+    @media (max-width: 390px){
+
+.voltar{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
 
     }

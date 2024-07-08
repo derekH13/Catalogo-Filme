@@ -28,11 +28,31 @@ return;
 }
 
 for(i = 0; i < x.Search.length; i++){
+    
     const card = document.querySelector('.card').cloneNode('true');
     
     let filme = new conteudoFilme(x.Search[i]);
+
     filme.preencherDados(card);
 
+    card.addEventListener('click', () => {
+
+        filme.MostrarModal();
+        filme.preencherModal(card);
+
+
+
+
+
+
+
+
+        const fechar = document.querySelector('.voltar');
+        fechar.addEventListener('click', () => {
+              filme.fecharModal();
+        })
+
+    })
 
 
 }
