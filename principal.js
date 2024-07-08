@@ -22,13 +22,17 @@ function pesquisaLista(json){
 
 let x = json;
 
-
+if(!json.response){//se a pesquisa não existir
+alert('Não Existe Filme Com Esse Nome!');
+}
 
 for(i = 0; i < x.Search.length; i++){
     const card = document.querySelector('.card').cloneNode('true');
     
     let filme = new conteudoFilme(x.Search[i]);
     filme.preencherDados(card);
+
+
 
 }
 }
