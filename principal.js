@@ -22,8 +22,9 @@ function pesquisaLista(json){
 
 let x = json;
 
-if(!json.response){//se a pesquisa não existir
+if(json.Response == "False"){//se a pesquisa não existir
 alert('Não Existe Filme Com Esse Nome!');
+return;
 }
 
 for(i = 0; i < x.Search.length; i++){
